@@ -17,7 +17,7 @@
   <body>
 
       <header>
-		<a href="/" name="Go to main page">
+		<a href="/blog" name="Go to main page">
 			<h1>To be resolved</h1>
 			<p>Documenting learning curves </p>
 		</a>
@@ -41,7 +41,7 @@
 		<ul>
 		  {% for post in site.posts %}
 			<li class="tag-h1">
-				<a href="/blog/{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
+				<a href="/blog{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
 			</li>
 		  {% endfor %}
 		</ul>
