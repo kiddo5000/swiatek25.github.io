@@ -1,2 +1,5 @@
 *.iml
 .idea
+Gemfile
+*.lock
+_site
