@@ -41,7 +41,7 @@
 		<ul>
 		  {% for post in site.posts %}
 			<li class="tag-h1">
-				<a href="{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
+				<a href="/blog/{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
 			</li>
 		  {% endfor %}
 		</ul>
