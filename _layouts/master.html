@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>To be resolved by swiatek25</title>
-    <link rel="stylesheet" href="/blog/stylesheets/styles.css">
-    <link rel="stylesheet" href="/blog/stylesheets/pygment_trac.css">
-    <script src="/blog/javascripts/main.js"></script>
+    <link rel="stylesheet" href="{{site.baseurl}}/stylesheets/styles.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/stylesheets/pygment_trac.css">
+    <script src="{{site.baseurl}}/javascripts/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,7 +17,7 @@
   <body>
 
       <header>
-		<a href="/blog" name="Go to main page">
+		<a href="{{site.baseurl}}" name="Go to main page">
 			<h1>To be resolved</h1>
 			<p>Documenting learning curves </p>
 		</a>
@@ -41,7 +41,7 @@
 		<ul>
 		  {% for post in site.posts %}
 			<li class="tag-h1">
-				<a href="/blog{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
+				<a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
 			</li>
 		  {% endfor %}
 		</ul>
