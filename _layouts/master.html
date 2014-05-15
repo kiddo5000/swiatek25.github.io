@@ -1,57 +1,89 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>To be resolved by swiatek25</title>
-    <link rel="stylesheet" href="{{site.baseurl}}/stylesheets/styles.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/stylesheets/pygment_trac.css">
-    <script src="{{site.baseurl}}/javascripts/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crazy Dog Solutions by swiatek25</title>
+    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css"/>
+    <script src="{{site.baseurl}}/js/vendor/modernizr.js"></script>
+</head>
+<body>
+<div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+        <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+				<li><label>Recent posts</label></li>
+			    {% for post in site.posts %}
+				<li>
+					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <br/><small>Posted on: {{post.date | date: "%Y-%m-%d" }}</small></a>
+				</li>
+			    {% endfor %}
+            </ul>
+        </aside>
 
-  </head>
-  <body>
+        <nav class="tab-bar show-for-small" data-topbar>
+            <section class="left-small">
+                <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </section>
+            <section class="centered middle tab-bar-section">
+                <h1 class="text-center">Crazy Dog Solutions by swiatek25</h1>
+            </section>
+        </nav>
+        <nav class="top-bar hide-for-small" data-topbar>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li class="divider"></li>
+                    <li class="has-form">
+                        <a href="https://github.com/swiatek25/blog" class="button round success">View On GitHub</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
 
-      <header>
-		<a href="{{site.baseurl}}" name="Go to main page">
-			<h1>To be resolved</h1>
-			<p>Documenting learning curves </p>
-		</a>
-      </header>
+        <section class="main-section">
+			<header>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <a href="{{site.baseurl}}"><img src="{{site.baseurl}}/img/logo.png"/></a>
+                    </div>
+                    <div class="small-8 columns description">
+                        <h1>Crazy Dog Solutions</h1>
 
-      <div id="banner">
-        <span id="logo"></span>
+                        <h2>Blog from non-existing <em>wannabe</em> company documenting learning curves of modern technologies</h2>
+                    </div>
+                </div>
+			</header>
+            <section id="main-content">
+                <div class="row">
+                    <div class="small-3 columns">
+                        <div>
+                            <ul class="side-nav">
+                                <li>Posts</li>
+								{% for post in site.posts %}
+								<li>
+									<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
+								</li>
+								{% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="small-9 columns">
+						{{ content }}
+                    </div>
+                </div>
+            </section>
+			<footer>
+				{% include footer.html %}
+			</footer>
+        </section>
 
-        <a href="https://github.com/swiatek25/blog" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/swiatek25/blog/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/swiatek25/blog/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+        <a class="exit-off-canvas"></a>
 
-    <div class="wrapper">
-      <nav>
-		<ul>
-		  {% for post in site.posts %}
-			<li class="tag-h1">
-				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
-			</li>
-		  {% endfor %}
-		</ul>
-      </nav>
-      <section>
-		{{ content }}		
-      </section>
-	  {% include footer.html %}
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+</div>
+
+<script src="{{site.baseurl}}/js/vendor/jquery.js"></script>
+<script src="{{site.baseurl}}/js/foundation.min.js"></script>
+<script> $(document).foundation();</script>
+</body>
 </html>
