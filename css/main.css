@@ -1,8 +1,9 @@
-ul {
-	list-style-image: url("../img/bullet.png");
-}
 #main-content {
 	padding: 30px 20px 0 20px; 
+}
+
+#main-content ul {
+	list-style-image: url("../img/bullet.png");
 }
 
 header {
@@ -26,6 +27,32 @@ header .description h2 {
    color: #C3A053;
    font-family: 'Francois One', sans-serif;
    font-size: 2em;
+}
+
+.side-nav .group-name {
+    list-style-image: none;
+    text-transform: uppercase;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #333;
+}
+
+footer .about p {
+    color: white;
+    padding-top: 55px;
+    font-size:1em;
+    font-family: 'Francois One', sans-serif;
+}
+
+.post {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+}
+
+.post h1,h2,h3,h4 {
+    font-family: 'Francois One', sans-serif;
 }
 
 #disqus_thread {

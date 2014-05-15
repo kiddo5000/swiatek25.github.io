@@ -12,24 +12,25 @@
     <div class="inner-wrap">
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">
-				<li><label>Recent posts</label></li>
-			    {% for post in site.posts %}
-				<li>
-					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <br/><small>Posted on: {{post.date | date: "%Y-%m-%d" }}</small></a>
-				</li>
-			    {% endfor %}
+                <li><label>Recent posts</label></li>
+                {% for post in site.posts %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <br/>
+                        <small>Posted on: {{post.date | date: "%Y-%m-%d" }}</small>
+                    </a>
+                </li>
+                <li><label>About</label></li>
+                {% endfor %}
+                <li><a href="https://github.com/swiatek25/blog">View On GitHub</a></li>
             </ul>
         </aside>
 
-        <nav class="tab-bar show-for-small" data-topbar>
-            <section class="left-small">
+        <nav class="tab-bar hide-for-large-up" data-topbar>
+            <section class="left-small ">
                 <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
             </section>
-            <section class="centered middle tab-bar-section">
-                <h1 class="text-center">Crazy Dog Solutions by swiatek25</h1>
-            </section>
         </nav>
-        <nav class="top-bar hide-for-small" data-topbar>
+        <nav class="top-bar show-for-large-up" data-topbar>
             <section class="top-bar-section">
                 <ul class="right">
                     <li class="divider"></li>
@@ -41,40 +42,45 @@
         </nav>
 
         <section class="main-section">
-			<header>
-                <div class="row">
+            <header>
+                <div class="row show-for-landscape">
                     <div class="small-4 columns">
-                        <a href="{{site.baseurl}}"><img src="{{site.baseurl}}/img/logo.png"/></a>
+                        <a href="{{site.baseurl}}"><img id="logo" src="{{site.baseurl}}/img/logo.png"/></a>
                     </div>
                     <div class="small-8 columns description">
                         <h1>Crazy Dog Solutions</h1>
-
                         <h2>Blog from non-existing <em>wannabe</em> company documenting learning curves of modern technologies</h2>
                     </div>
                 </div>
-			</header>
+                <div class="row show-for-portrait">
+                    <div class="small-12 columns description">
+                        <h1>Crazy Dog Solutions</h1>
+                        <h2>Blog from non-existing <em>wannabe</em> company documenting learning curves of modern technologies</h2>
+                    </div>
+                </div>
+            </header>
             <section id="main-content">
                 <div class="row">
-                    <div class="small-3 columns">
+                    <div class="small-3 columns show-for-large-up">
                         <div>
                             <ul class="side-nav">
-                                <li>Posts</li>
-								{% for post in site.posts %}
-								<li>
-									<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  {{post.date | date: "%Y-%m-%d" }}
-								</li>
-								{% endfor %}
+                                <li class="group-name">Recent posts</li>
+                                {% for post in site.posts %}
+                                <li>
+                                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> {{post.date | date: "%Y-%m-%d" }}
+                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
-                    <div class="small-9 columns">
-						{{ content }}
+                    <div class="small-12 middle-9 large-9 columns">
+                        {{ content }}
                     </div>
                 </div>
             </section>
-			<footer>
-				{% include footer.html %}
-			</footer>
+            <footer>
+                {% include footer.html %}
+            </footer>
         </section>
 
         <a class="exit-off-canvas"></a>
