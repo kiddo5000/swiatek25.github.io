@@ -29,6 +29,10 @@ header .description h2 {
    font-size: 2em;
 }
 
+.side-nav {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .side-nav .group-name {
     list-style-image: none;
     text-transform: uppercase;
@@ -42,17 +46,31 @@ footer {
 footer .about p {
     color: white;
     padding-top: 55px;
-    font-size:1em;
-    font-family: 'Francois One', sans-serif;
+    font-size:10pt;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .post {
     font-family: 'Open Sans', sans-serif;
-    line-height: 20px;
 }
 
-.post h1,h2,h3,h4 {
+.post h1,h2,h3,h4,h5 {
+    padding: 20px 0 5px 0;
     font-family: 'Francois One', sans-serif;
+}
+
+.post .date {
+    padding: 30px 0 10px 0;
+    font-size: 10pt;
+}
+
+.panel.note {
+    margin: 10px 0 10px 0;
+    line-height: 2em;
+}
+
+.panel.note .label {
+    display: inline;
 }
 
 #disqus_thread {

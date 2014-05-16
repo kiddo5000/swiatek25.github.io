@@ -3,8 +3,12 @@ layout: master
 title: Home
 ---
 
-<h2>{{site.posts.first.title}}</h2>
-{{ site.posts.first.content }}
+<div class="post">
+    <h1 class="title">{{site.posts.first.title}}</h1>
+    <div class="content">
+        {{ site.posts.first.content }}
+    </div>
+</div>
 
 {% include comments.html shortname="toberesolved" %}
 

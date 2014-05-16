@@ -1,8 +1,9 @@
 @import url('http://fonts.googleapis.com/css?family=Francois+One');
 @import url('http://fonts.googleapis.com/css?family=Londrina+Outline');
-@import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,300');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
 
 @import url('foundation.min.css');
 @import url('foundation-icons.css');
 @import url('main.css');
 @import url('responsive.css');
+@import url('syntax.css');

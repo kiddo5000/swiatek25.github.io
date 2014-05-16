@@ -1,0 +1,101 @@
+---
+title : Jekyll code highlighting set-up
+layout : post
+comments-shortname : jekyllpygmentsentry
+---
+<div class="row hide-for-large-up">
+    <div data-magellan-expedition="fixed">
+        <dl class="sub-nav">
+            <dd data-magellan-arrival="theory"><a href="#theory">In theory</a></dd>
+            <dd data-magellan-arrival="fix"><a href="#fix">Apply fixes</a></dd>
+            <dd data-magellan-arrival="syntax"><a href="#syntax">Syntax coloring</a></dd>
+            <dd data-magellan-arrival="ref"><a href="#ref">References</a></dd>
+        </dl>
+    </div>
+</div>
+
+<a name="theory"></a>
+<h3 data-magellan-destination="theory">In theory</h3>
+<blockquote>
+    To render a code block with syntax highlighting, surround your code as follows:
+    <pre>
+        <code>
+{{ "{% highlight LANG [linenos] "}}%}
+def foo
+    puts 'foo'
+end
+{{ "{% endhighlight "}}%}
+        </code>
+    </pre>
+    <cite>http://jekyllrb.com/docs/templates/#code-snippet-highlighting</cite>
+</blockquote>
+
+<p>
+    But when it comes to execution one gets an exception about missing <strong>python2</strong> command.
+
+    {% highlight bat %}
+    C:\projects\blog>jekyll serve --watch --baseurl="" --trace
+    Generating... C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/posix-spawn-0.3.8/lib/posix/spawn.rb:162: warning: cannot close fd before spawn
+    which: no python2 in (.;C:\tools\Python27\;...){% endhighlight %}
+
+    {% include note.html content="Sometimes it is necessary to execute <code>gem install wdm</code> before getting this error. I'm describing my fix path from 'python-error' point." %}
+</p>
+
+<a name="fix"></a>
+<h3 data-magellan-destination="fix">Dealing with issues</h3>
+
+<ol>
+    <li>First we need to install <a href="https://www.python.org/downloads/">newest</a> python version. In case of my error - python2 - suggests Python 2.x version.</li>
+    <li><span class="label alert">Rename</span> python executable <strong>python.exe</strong> to <strong>python2.exe</strong></li>
+    <li>Add python executable to your system PATH variable</li>
+</ol>
+
+Following those steps should make your project run correctly with syntax highlighting.
+
+<a name="syntax"></a>
+<h3 data-magellan-destination="syntax">Where are the colors ?</h3>
+<p>
+There is one more step required for fully functional syntax highlighting.
+As Jekyll documentation mentiones one need to have a proper <strong>syntax.css</strong> file compatible with pygments generated CSS classes.
+A reference to <a href="https://github.com/mojombo/tpw/blob/master/css/syntax.css">example</a> file is given.
+</p>
+<p>
+If you are not satisfied with presented results you can refer to<a href="https://github.com/richleland/pygments-css">@pygments-css</a>
+</p>
+<p>
+    The only thing that I noticed was missing formatting for line numbers. It can be achieved by adding additional class definition to syntax styles
+    {% highlight css %}
+.highlight .lineno {
+    font-style: italic;
+    padding:0 10px 0 10px;
+    background-color: #ececec;
+    color: #aaa;
+}{% endhighlight %}
+</p>
+
+<h4>Note about responsive design</h4>
+<p>
+I noticed small issue when scaling page to smaller devices - code gets out of screen. I fixed that by adding:
+    {% highlight css %}
+.highlight pre {
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: hidden
+}{% endhighlight %}
+</p>
+<p>
+How we have a fully functional great code highlight for our page. As a final example this code snippet:
+    {% highlight scala linenos%}
+object HelloWorld {
+    def main(args: Array[String]) {
+        println("Hello, world!")
+    }
+}{% endhighlight %}
+</p>
+
+<a name="ref"></a>
+<h3 data-magellan-destination="ref">References</h3>
+<ul>
+    <li><a href="http://jekyllrb.com/docs/templates/">Jekyll template engine</a></li>
+    <li><a href="http://pygments.org/docs/lexers/">Available highlighting lexers (short-names)</a> </li>
+</ul>
