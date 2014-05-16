@@ -4,6 +4,7 @@ From: Poland
 Living: Frankfurt am Main                            
 
 /* SITE */
+OS: Windows x64
 Standards: HTML5, CSS3
 Framework: Foundation, Jekyll 
 Software: IntelliJ IDEA, Notepad++
