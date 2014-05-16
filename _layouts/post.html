@@ -8,7 +8,7 @@ layout: master
     </div>
     <div class="date">posted <em>{{page.date | date_to_string}}</em></div>
 </div>
-{% if page.comments-shortname %}-->
+{% if page.comments-shortname %}
 	{% include comments.html shortname=page.comments-shortname %}
 {% endif %}
 
