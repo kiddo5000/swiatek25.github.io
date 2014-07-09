@@ -7,12 +7,12 @@
 }
 
 header {
-    background-color: #f0b500;
-	border: 2px solid #ffcc00;
+  background-color: #f0b500;
+	order: 2px solid #ffcc00;
 }
 
 header .description {
-    padding: 8% 20px 0 20px;
+  padding: 8% 20px 0 20px;
 }
 
 header .description h1 {
@@ -75,4 +75,41 @@ footer .about p {
 
 #disqus_thread {
 	padding-top: 20px;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.cv .header {
+  margin-top: -20px;
+}
+
+.cv .part-name {
+  font-size: 16pt;
+}
+
+.cv .position {
+  line-height: 1.4em;
+  margin-bottom: 10px;
+}
+.cv .position-company {
+  font-size: 14pt;
+}
+
+.cv .position-name {
+  font-size: 13pt;
+}
+
+.cv .position-desc {
+  font-size: 11pt;
+}
+
+.cv .position-tech {
+  font-size: 11pt;
+  font-style: italic;
 }
